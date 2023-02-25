@@ -1,17 +1,18 @@
 ﻿// Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, 
 // которая будет находить строку с наименьшей суммой элементов.
-int[,] GetArray(int m, int n)
-{
-    int[,] result = new int[m, n];
+Console.Clear();
 
-    for (int i = 0; i < m; i++)
+int[,] GetArray(int rows, int colomns, int minValue, int maxValue)
+{
+    int[,] result = new int[rows, colomns];
+
+    for (int i = 0; i < rows; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < colomns; j++)
         {
-            result[i, j] = i + j;
+            result[i, j] = new Random().Next(minValue, maxValue + 1);
         }
     }
-    return result;
 }
 
 void PrintArray(int[,] array)
